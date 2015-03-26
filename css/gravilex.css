@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'gravilex';
+    src: url('../fonts/gravilex.eot');
+    src: url('../fonts/gravilex.eot') format('embedded-opentype'),
+         url('../fonts/gravilex.woff2') format('woff2'),
+         url('../fonts/gravilex.woff') format('woff'),
+         url('../fonts/gravilex.ttf') format('truetype'),
+         url('../fonts/gravilex.svg#gravilex') format('svg');
+}

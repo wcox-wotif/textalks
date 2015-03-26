@@ -1,0 +1,72 @@
+/*core css file.*/
+
+@import url("gravilex.css");
+@import url("HelveticaBlk.css");
+@import url("normalize.css");
+@import url("foundation.css");
+
+#header {
+    border-bottom: 2px solid #E0E0E0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+a.logo_primary_font {
+    font-family: 'HelveticaBlk';
+    font-size: 6em;
+    font-weight: bold;
+    color: #F02F0D;
+    float: left;
+    margin-bottom: -25px;
+}
+.motto {
+    float: left;
+    margin: 25px 0px 0 20px;
+    font-size: 3em;
+    color: #888888;
+}
+.saying {
+    font-size: 0.9em;
+    color: #888888;
+}
+.logo_color {
+    color: #F02F0D;    
+}
+.bottomButton {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    margin-bottom: 0;
+}
+
+.buttonPadding {
+    position: relative;
+    padding-bottom: 70px;
+}
+.small_videos .panel {
+    margin-top: -7px;
+}
+
+/* UPVOTE */
+.voteing {
+    width: 25px;
+    margin: 0 auto;
+}
+.upvote, .downvote {
+    font-size: 4em !important;
+    margin: 0 auto;
+    display: block;
+    clear: both;
+    width: 30px;
+}
+.upvote {
+    margin-bottom: -40px;
+}
+.downvote {
+    margin-top: -40px;
+}
+.count {
+    text-align: center;
+    width: 30px;
+    display: block;
+    font-size: 20px;
+}

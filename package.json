@@ -1,0 +1,16 @@
+{
+  "name": "TexTalks",
+  "version": "10.3.1",
+  "description": "The TEX talk website. Expedia's TEDx Talks",
+  "author": "Warwick Cox <warwickcox@gmail.com>",
+  "contributors": [
+    {
+      "name": "TEX Talks",
+      "email": "warwickcox@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^2.2.3"
+  }
+}
