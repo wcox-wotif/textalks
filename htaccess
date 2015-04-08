@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# This makes all the pages hit the index page
+# This lets the database to run the site.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

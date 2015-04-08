@@ -8,9 +8,11 @@
             
             <div class="large-6 columns">
                 <ul class="inline-list right">
-                    <li><a href="/home.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/talks.php">Talks</a></li>
                     <li><a href="/tips.php">Tips</a></li>
+                    <li><a href="/feedback.php">Feedback</a></li>
+                    <li><a href="/admin.php">Add Talk</a></li>
                 </ul>
             </div>
             

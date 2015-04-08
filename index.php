@@ -1,3 +1,10 @@
+<?php include_once('php/core.php'); ?>
+<?php 
+    $core = new Core;
+    $lastResultArray = $core->returnLastResult();
+    $lastItemYoutubeId = $lastResultArray['youtube_id'];
+
+ ?>
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -13,7 +20,8 @@
                     
                     <div class="large-6 columns">
                         <a href="/talks.php">
-                            <iframe id="ytplayer" width="470" height="275" src="https://www.youtube.com/embed/ev1QqABlYIs?controls=0&fs=0&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe><br>
+
+                            <iframe id="ytplayer" width="470" height="275" src="https://www.youtube.com/embed/<?php print $lastItemYoutubeId; ?>?controls=0&fs=0&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe><br>
                         </a>
                         
                     </div>
@@ -42,8 +50,8 @@
                             <div class="large-6 small-6 columns">
                                 <div class="panel buttonPadding" data-equalizer-watch>
                                     <h5><strong class="logo_color">Previous talks</strong></h5>
-                                    <h6 class="subheader">Check out some previous talks</h6>
-                                    <a href="/talks.php" class="small button bottomButton right">Resources</a>
+                                    <h6 class="subheader">Check out all the talks and vote on them</h6>
+                                    <a href="/talks.php" class="small button bottomButton right">View All Talks</a>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -62,35 +70,11 @@
                 </div>
 
                 <div class="row small_videos">
-                    
-                    <div class="large-4 small-6 columns">
-                        <a href="#" title="">
-                            <iframe width="303" height="157" src="https://www.youtube.com/embed/ev1QqABlYIs?controls=0&fs=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-                            <div class="panel">
-                                <p>How to present with confidence</p>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="large-4 small-6 columns">
-                        <a href="#" title="">
-                            <iframe width="303" height="157" src="https://www.youtube.com/embed/qxiMQy02CGw?controls=0&fs=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-                            <div class="panel">
-                                <p>Women in leadership</p>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="large-4 small-6 columns">
-                        <a href="#" title="">
-                            <img src="http://placehold.it/304x157&text=Coming soon">
-                            <div class="panel">
-                                <p>Coming soon</p>
-                            </div>
-                        </a>
-                    </div>
-                                        
+
+                    <?php include_once('templates/homePagePreviousTalkTiles.php'); ?>
+
                 </div>
+
                 <?php include_once('includes/footer.php'); ?>
             </div>
         </div>

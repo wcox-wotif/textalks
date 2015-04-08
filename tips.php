@@ -3,16 +3,16 @@
     <head>
         <?php include_once('includes/head.php'); ?>
         <title>TEX Talks - Tips and Resources</title>
-        <script src="js/tips.js"></script>
+        <script src="js/vote.js"></script>
     </head>
     <body>
 
 <?php 
-    $vote = '<div class="voteing">
-                <a href="#" class="upvote"><i class="fa fa-sort-asc"></i></a>
-                <span class="count">10</span>
-                <a href="#" class="downvote"><i class="fa fa-sort-desc"></i></a>
-             </div>';
+    // $vote = '<div class="voteing">
+    //             <a href="#" class="upvote"><i class="fa fa-sort-asc"></i></a>
+    //             <span class="count">10</span>
+    //             <a href="#" class="downvote"><i class="fa fa-sort-desc"></i></a>
+    //          </div>';
   ?>
         <?php include_once('includes/header.php'); ?>
             
@@ -47,7 +47,7 @@
                    
                     <div class="row post" id="post1" data-up_votes="" data-id="post1">
                         <div class="large-1 columns small-3">
-                            <?php echo $vote; ?>
+                            <?php include('templates/vote.php'); ?>
                         </div>
                         <div class="large-11 columns">
                             <h5>Tools</h5>
@@ -81,7 +81,7 @@
                     
                     <div class="row post" id="post2" data-up_votes="" data-id="post2">
                         <div class="large-1 columns small-3">
-                            <?php echo $vote; ?>
+                            <?php include('templates/vote.php'); ?>
                         </div>
                         <div class="large-11 columns">
                             <h5>Public speaking tips</h5>
@@ -110,7 +110,7 @@
                     
                     <div class="row post" id="post3" data-up_votes="" data-id="post3">
                         <div class="large-1 columns small-3">
-                            <?php echo $vote; ?>
+                            <?php include('templates/vote.php'); ?>
                         </div>
                         <div class="large-11 columns">
                             <h5>Presenation tips</h5>
@@ -145,7 +145,7 @@
 
             <script>
                 $(document).foundation();
-                TIPS.init();
+                VOTE.init();
             </script>
         </body>
     </html>
