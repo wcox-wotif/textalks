@@ -129,6 +129,11 @@
                                   <td><a href="https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide/speakers-program/prepare-your-speaker/create-prepare-slides" title="">https://www.ted.com/...tips</a></td>
                                   <td>Do you really need your slides? If so, how do you use them?</td>
                                 </tr>
+                                <tr>
+                                  <td>Slide tips</td>
+                                  <td><a href="https://docs.google.com/document/d/1Ob_0wgEVs9P2QnkvOj35BtcUNcE5lry-WpnbAz266Ao/edit?usp=sharing" title="">docs.google.com/document/...</a></td>
+                                  <td>A great resource to structure your presentation correctly.</td>
+                                </tr>
                               </tbody>
                             </table>
 
