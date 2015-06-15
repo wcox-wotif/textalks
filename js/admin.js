@@ -7,7 +7,7 @@
 
     init: function(){
 
-        this.submitTalk();
+        // this.submitTalk();
 
     },
 
@@ -39,6 +39,24 @@
         $('.addTalkForm input[name="topic"]').val('');
         $('.addTalkForm input[name="date"]').val('');
         $('.addTalkForm input[name="presentation_link"]').val('');
+    },
+
+    login: function(){
+
+        $('#login').validate({
+            onfocusout: false,
+            onkeyup: false,
+            onclick: false,
+            rules: {
+                username: 'required',
+                password: 'required'
+            },
+
+            submitHandler: function(form){
+                form.submit();
+            }
+        });
+
     }
 
 }

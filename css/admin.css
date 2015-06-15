@@ -1,0 +1,32 @@
+/* ADMIN LOGIN */
+body {
+    background: #101010;
+}
+#loginBox {
+    width: 340px;
+    margin: 100px auto;
+    padding: 40px;
+    background: #FFF;
+    border: 1px solid #CCC;
+    -moz-box-shadow: 10px 10px 60px #101010  ;
+    -webkit-box-shadow: 10px 10px 60px #101010  ;
+    box-shadow: 10px 10px 60px #101010  ;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#login label {
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+}
+#login input, #login button{
+    display: block;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    margin: 5px auto 15px;
+    width: 100%;
+}
+#login button[type="submit"] {
+    font-size: 2em;
+}

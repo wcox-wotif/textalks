@@ -7,81 +7,113 @@
  ?>
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
+<head>
     <?php include_once('includes/head.php'); ?>
     <title>TEX Talks - Expedia learning</title>
-  </head>
-  <body>
-    <body>
-        <?php include_once('includes/header.php'); ?>
-        <div class="row">
-            <div class="large-12 columns">
-                <div class="row">
-                    
-                    <div class="large-6 columns">
-                        <a href="/talks.php">
+</head>
+<body>
+<?php include_once('includes/header.php'); ?>
 
-                            <iframe id="ytplayer" width="470" height="275" src="https://www.youtube.com/embed/<?php print $lastItemYoutubeId; ?>?controls=0&fs=0&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe><br>
-                        </a>
-                        
-                    </div>
-                    <div class="large-6 columns">
-                        
-                        <h3 class="show-for-small"><strong class="logo_color">T</strong>alk <strong class="logo_color">EX</strong>pedia <strong class="logo_color">Talks</strong><hr/></h3>
-                        
-                        <div class="panel">
-                            <h4 class="hide-for-small"><strong class="logo_color">T</strong>alk <strong class="logo_color">EX</strong>pedia <strong class="logo_color">Talks</strong><hr/></h4>
-                            <h5 class="subheader">
-                                <ul>
-                                    <li>Once a week</li>
-                                    <li>2 power talks</li>
-                                    <li>Talk about anything</li>
-                                    <li>Talk for 18 mins max</li>
-                                    <li>Presentation is recorded and added here</li>
-                                    <li>Constructive feedback about presentation provided</li>
-                                </ul>
-                            </h5>
-                        </div>
-                    </div>
-                        
-                    <div class="large-12 columns">
 
-                        <div class="row" data-equalizer>
-                            <div class="large-6 small-6 columns">
-                                <div class="panel buttonPadding" data-equalizer-watch>
-                                    <h5><strong class="logo_color">Previous talks</strong></h5>
-                                    <h6 class="subheader">Check out all the talks and vote on them</h6>
-                                    <a href="/talks.php" class="small button bottomButton right">View All Talks</a>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="large-6 small-6 columns" >
-                                <div class="panel buttonPadding" data-equalizer-watch>
-                                    <h5><strong class="logo_color">Tips / Resources</strong></h5>
-                                    <h6 class="subheader">Check out the list of resouces to become a better speaker</h6>
-                                    <a href="/tips.php" class="small button bottomButton right">Resources</a>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="row small_videos">
-
-                    <?php include_once('templates/homePagePreviousTalkTiles.php'); ?>
-
-                </div>
-
-                <?php include_once('includes/footer.php'); ?>
+<div class="video_container">
+    <div class="grid-sizer"></div>
+    <div data-title="Snow lip" data-speaker="Drifter" class="item w2">
+        <a href="/talks/Drifter-Snow_lip" title="Drifter. Snow lip">
+            <img src="/testImages/skiing1.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">Snow lip</div>
+                <div class="speaker">Drifter</div>
             </div>
-        </div>
-        <script src="js/vendor/jquery.js"></script>
-        <script src="js/foundation.min.js"></script>
-        <script>
-          $(document).foundation();
-        </script>
-    </body>
+        </a>
+    </div>
+    <div data-title="X factor" data-speaker="Jack James" class="item grid-sizer">
+        <a href="/talks/Jack_James-X_factor" title="Drifter. Snow lip">
+            <img src="/testImages/skiing2.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">X factor</div>
+                <div class="speaker">Jack James</div>
+            </div>
+        </a>
+    </div>
+    <div data-title="Inverted X Factor" data-speaker="Chris Roberts" class="item">
+        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
+            <img src="/testImages/skiing10.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">Inverted X Factor</div>
+                <div class="speaker">Chris Roberts</div>
+            </div>
+        </a>
+    </div>
+    <div data-title="Inverted X Factor" data-speaker="Karl Ringrose" class="item">
+        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
+            <img src="/testImages/skiing11.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">Inverted X Factor</div>
+                <div class="speaker">Karl Ringrose</div>
+            </div>
+        </a>
+    </div>
+    <div data-title="X factor with a view" data-speaker="Quick Sam" class="item">
+        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
+            <img src="/testImages/skiing3.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">X factor with a view</div>
+                <div class="speaker">Quick Sam</div>
+            </div>
+        </a>
+    </div>
+    <div data-title="Back Scratcher" data-speaker="Jim Bob" class="item w2">
+        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
+            <img src="/testImages/skiing5.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">Back Scratcher</div>
+                <div class="speaker">Jim Bob</div>
+            </div>
+        </a>
+    </div>
+    <div data-title="Invert" data-speaker="Frank Style" class="item">
+        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
+            <img src="/testImages/skiing4.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">Invert</div>
+                <div class="speaker">Frank Style</div>
+            </div>
+        </a>
+    </div>
+    <div data-title="Seated X Factor into Backflip" data-speaker="Kristin Repsher" class="item">
+        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
+            <img src="/testImages/skiing8.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">Seated X Factor into Backflip</div>
+                <div class="speaker">Kristin Repsher</div>
+            </div>
+        </a>
+    </div>
+    <div data-title="Big X Factor" data-speaker="Belle Donald" class="item w2">
+        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
+            <img src="/testImages/skiing6.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">Big X Factor</div>
+                <div class="speaker">Belle Donald</div>
+            </div>
+        </a>
+    </div>
+    <div data-title="Corkscrew" data-speaker="Warwick Cox" class="item w2">
+        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
+            <img src="/testImages/skiing9.jpg" alt="Skiing image">
+            <div class="details">
+                <div class="topic">Corkscrew</div>
+                <div class="speaker">Warwick Cox</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+<?php include_once('includes/footer.php'); ?>
+</body>
 </html>
