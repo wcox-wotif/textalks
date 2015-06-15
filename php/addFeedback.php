@@ -3,12 +3,13 @@
     ini_set('display_errors', 'On');
 
 
-    include_once('db.php');
+    include_once $_SERVER['DOCUMENT_ROOT'].'/php/db.php';
 
     $type     = $_POST['type'];
     $feedback = $_POST['feedback'];
 
-    $conn = dbConnect('admin');
+    $DB = new DB;
+    $conn = $DB->connect();
 
     try {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

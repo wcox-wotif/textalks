@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# This redirects the 404 page to a custom 404 page.
+
+# This makes all the pages hit the index page
+# This lets the database to run the site.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php
+RewriteRule ^index\.php$ / [L,R=301]

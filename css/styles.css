@@ -38,6 +38,12 @@
 .header.uncompressed menu li a{
     color: #FFF;
 }
+.page_info_json {
+    display: none;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
 
 @keyframes fadeInOut {
     0% {

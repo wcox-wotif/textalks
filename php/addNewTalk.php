@@ -3,8 +3,8 @@
     ini_set('display_errors', 'On');
 
 
-    include_once('db.php');
-    include_once('core.php');
+    include_once $_SERVER['DOCUMENT_ROOT'].'/php/db.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/php/core.php';
 
     $hero_img = $_FILES['hero_img'];
     $youtube_id = $_POST['youtube_id'];
@@ -13,7 +13,8 @@
     $date = $_POST['date'];
     $presentation_link = $_POST['presentation_link'];
 
-    $conn = dbConnect('admin');
+    $DB = new DB;
+    $conn = $DB->connect();
 
     try {
         $Core = new Core;

@@ -3,9 +3,10 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
 
-    include_once('db.php');
+    include_once $_SERVER['DOCUMENT_ROOT'].'/db.php';
 
-    $conn = dbConnect('admin');
+    $DB = new DB;
+    $conn = $DB->connect();
     $data = array();
     $sql = "SELECT * FROM `votes`";
     foreach ($conn->query($sql) as $row) {

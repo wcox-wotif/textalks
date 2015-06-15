@@ -1,13 +1,13 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-        <?php include_once('includes/adminHead.php'); ?>
+        <?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/adminHead.php'; ?>
         <title>TEX Talks - Latest talks</title>
         <script src="js/admin.js"></script>
     </head>
     <body>
 
-        <?php include_once('includes/header.php'); ?>
+        <?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php'; ?>
             
             
             <div class="row">
@@ -105,7 +105,7 @@
 
             </form>
             
-            <?php include_once('includes/footer.php'); ?>
+            <?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
 
             <script src="js/foundation.min.js"></script>
 

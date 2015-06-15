@@ -1,119 +1,36 @@
-<?php include_once('php/core.php'); ?>
 <?php 
-    $core = new Core;
-    $lastResultArray = $core->returnLastResult();
-    $lastItemYoutubeId = $lastResultArray['youtube_id'];
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', 'On');
+
+    include_once $_SERVER['DOCUMENT_ROOT'].'/php/Page.php';
+
+    $Page = new Page;
+    $pageInfo = $Page->returnPageInfo();
 
  ?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-    <?php include_once('includes/head.php'); ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/head.php'; ?>
     <title>TEX Talks - Expedia learning</title>
 </head>
 <body>
-<?php include_once('includes/header.php'); ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php'; ?>
+
+<?php 
+
+    if($pageInfo['page_name'] == 'home') {
+        include_once $_SERVER['DOCUMENT_ROOT'].'/templates/homePage_videoLinks.php';
+    } elseif ($pageInfo['page_name'] == 'talks') {
+        include_once $_SERVER['DOCUMENT_ROOT'].'/templates/talks.php';        
+    }
+
+ ?>
 
 
-<div class="video_container">
-    <div class="grid-sizer"></div>
-    <div data-title="Snow lip" data-speaker="Drifter" class="item w2">
-        <a href="/talks/Drifter-Snow_lip" title="Drifter. Snow lip">
-            <img src="/testImages/skiing1.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">Snow lip</div>
-                <div class="speaker">Drifter</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="X factor" data-speaker="Jack James" class="item grid-sizer">
-        <a href="/talks/Jack_James-X_factor" title="Drifter. Snow lip">
-            <img src="/testImages/skiing2.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">X factor</div>
-                <div class="speaker">Jack James</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="Inverted X Factor" data-speaker="Chris Roberts" class="item">
-        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
-            <img src="/testImages/skiing10.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">Inverted X Factor</div>
-                <div class="speaker">Chris Roberts</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="Inverted X Factor" data-speaker="Karl Ringrose" class="item">
-        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
-            <img src="/testImages/skiing11.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">Inverted X Factor</div>
-                <div class="speaker">Karl Ringrose</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="X factor with a view" data-speaker="Quick Sam" class="item">
-        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
-            <img src="/testImages/skiing3.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">X factor with a view</div>
-                <div class="speaker">Quick Sam</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="Back Scratcher" data-speaker="Jim Bob" class="item w2">
-        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
-            <img src="/testImages/skiing5.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">Back Scratcher</div>
-                <div class="speaker">Jim Bob</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="Invert" data-speaker="Frank Style" class="item">
-        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
-            <img src="/testImages/skiing4.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">Invert</div>
-                <div class="speaker">Frank Style</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="Seated X Factor into Backflip" data-speaker="Kristin Repsher" class="item">
-        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
-            <img src="/testImages/skiing8.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">Seated X Factor into Backflip</div>
-                <div class="speaker">Kristin Repsher</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="Big X Factor" data-speaker="Belle Donald" class="item w2">
-        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
-            <img src="/testImages/skiing6.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">Big X Factor</div>
-                <div class="speaker">Belle Donald</div>
-            </div>
-        </a>
-    </div>
-    <div data-title="Corkscrew" data-speaker="Warwick Cox" class="item w2">
-        <a href="/talks/Jim_Bob-Back_Scratcher" title="">
-            <img src="/testImages/skiing9.jpg" alt="Skiing image">
-            <div class="details">
-                <div class="topic">Corkscrew</div>
-                <div class="speaker">Warwick Cox</div>
-            </div>
-        </a>
-    </div>
-</div>
-
-
-
-
-
-
-<?php include_once('includes/footer.php'); ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
+<div class="page_info_json"><?php print json_encode($pageInfo, JSON_UNESCAPED_SLASHES); ?></div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php 
-    include_once('php/core.php');
+    include_once $_SERVER['DOCUMENT_ROOT'].'/php/core.php';
     $core = new Core;
     $last3ResultsArray = $core->returnLast3Results();
     foreach ($last3ResultsArray as $resultArray) {

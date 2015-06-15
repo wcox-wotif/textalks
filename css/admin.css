@@ -30,3 +30,6 @@ body {
 #login button[type="submit"] {
     font-size: 2em;
 }
+#hero_img {
+    color: #fff;
+}

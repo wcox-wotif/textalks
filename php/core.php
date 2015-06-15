@@ -3,7 +3,7 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
 
-    include_once('db.php');
+    include_once $_SERVER['DOCUMENT_ROOT'].'/php/db.php';
 
 /**
 * 
@@ -12,7 +12,8 @@ class Core {
     
     public function returnLastResult() {
 
-        $conn = dbConnect('admin');
+        $DB = new DB;
+        $conn = $DB->connect();
         $data = [];
         $sql = "SELECT * FROM `talks` ORDER BY `id` DESC LIMIT 1";
         foreach ($conn->query($sql) as $row) {
@@ -26,8 +27,9 @@ class Core {
         return $data;
     }
 
-    public function returnAllResults() {
-        $conn = dbConnect('admin');
+    public function returnAllTalks() {
+        $DB = new DB;
+        $conn = $DB->connect();
         $data = [];
         $sql = "SELECT * FROM `talks` ORDER BY `id` DESC";
         foreach ($conn->query($sql) as $row) {
@@ -36,13 +38,15 @@ class Core {
             $data[$row['id']]['presenter'] = $row['presenter'];
             $data[$row['id']]['topic'] = $row['topic'];
             $data[$row['id']]['date'] = $row['date'];
+            $data[$row['id']]['hero_url'] = $row['hero_url'];
             $data[$row['id']]['presentation_link'] = $row['presentation_link'];
         }
         return $data;
     }
 
     public function returnLast3Results() {
-        $conn = dbConnect('admin');
+        $DB = new DB;
+        $conn = $DB->connect();
         $data = [];
         $sql = "SELECT * FROM `talks` ORDER BY `id` DESC LIMIT 3";
         foreach ($conn->query($sql) as $row) {
@@ -96,9 +100,10 @@ class Core {
                 throw new Exception("No image selected. You can upload JPG, GIF or PNG files.");
             }
         } catch(Exception $e) {
-            return '<h4>'.$e->getMessage().'</h4>';
+            // return '<h4>'.$e->getMessage().'</h4>';
         }
     }
+
 
     public function getYouTubeData($youtubeIdArray) {
          
