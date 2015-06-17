@@ -12,14 +12,14 @@
 
         <div class="logo">
             <a href="/">
-            <img class="words" src="/img/logo.svg">
+                <img class="words" src="/img/logo.svg">
+                <div class="icons">
+                    <img class="icon icon-play_hollow" src="/img/play_logo.svg">
+                    <img class="icon icon-speak" src="/img/speak_logo.svg">
+                    <img class="icon icon-comment" src="/img/comment_logo.svg">
+                    <img class="icon icon-play_solid" src="/img/play_solid_logo.svg">
+                </div>
             </a>
-            <div class="icons">
-                <img class="icon icon-play_hollow" src="/img/play_logo.svg">
-                <img class="icon icon-speak" src="/img/speak_logo.svg">
-                <img class="icon icon-comment" src="/img/comment_logo.svg">
-                <img class="icon icon-play_solid" src="/img/play_solid_logo.svg">
-            </div>
         </div>
 
         <menu type="context toolbar">
