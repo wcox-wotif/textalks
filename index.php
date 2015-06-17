@@ -1,5 +1,4 @@
 <?php 
-
     error_reporting(E_ALL);
     ini_set('display_errors', 'On');
 
@@ -9,14 +8,13 @@
     $pageInfo = $Page->returnPageInfo();
 
  ?>
-
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
     <?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/head.php'; ?>
     <title>TEX Talks - Expedia learning</title>
 </head>
-<body>
+<body class="<?php print $pageInfo['page_name']; ?>">
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php'; ?>
 
 <?php 

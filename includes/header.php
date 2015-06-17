@@ -1,17 +1,19 @@
 <header id="header">
 
     <div class="header compressed">
-
-        <div class="logo"><img src="/img/play_solid_logo.svg"></div>
+        <a href="/">
+            <div class="logo"><img src="/img/play_solid_logo.svg"></div>
+        </a>
         <div class="menu_icon"><i class="fa fa-bars"></i></div>
-
     </div>
 
     <div class="header uncompressed">
         <div class="menu_close"><i class="fa fa-times"></i></div>
 
         <div class="logo">
+            <a href="/">
             <img class="words" src="/img/logo.svg">
+            </a>
             <div class="icons">
                 <img class="icon icon-play_hollow" src="/img/play_logo.svg">
                 <img class="icon icon-speak" src="/img/speak_logo.svg">

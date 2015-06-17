@@ -6,9 +6,9 @@ class DB {
 
         $server = $_SERVER['SERVER_PORT'];
         if($server == '10') {
-            $user = "TEX";
+            $user = "qwebdevc_tex";
             $pwd = "R8rLdyDB9566J7hX";         
-            $database='TEX';
+            $database='qwebdevc_textalks';
             $host='localhost';
         } else {
             $user = 'qwebdevc_tex';

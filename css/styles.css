@@ -176,6 +176,96 @@
 .video_container .item img {
 }
 
+
+body.talks {
+    background: #1B1B1B;
+}
+
+.youTubeVideo iframe, .youTubeVideo object, .youTubeVideo embed {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    margin-bottom: 20px;
+    display: block;
+    clear: both;
+}
+.youTubeVideo, .presentation_details {
+    width: 100%;
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+}
+.presentation_details {
+    height: 300px;
+    background: #2F2F2F;
+    padding: 2em 3% 0 3%;
+    border-bottom: 1px solid #48fdbc;
+}
+.presentation_details h2, .presentation_details h3 {
+    display: block;
+    clear: both;
+    color: #fff;
+    font-weight: normal;
+}
+.stats img {
+    width: 50px;
+}
+.stats img.heart {
+    width: 30px;
+    margin-left: -3px;
+    margin-top: -3px;
+}
+.stats {
+    float: left;
+    width: 140px;
+    color: #48fdbc;
+}
+.like_stats {
+    margin-top: 5px;
+}
+.plays_stats span {
+    margin-left: -10px;
+}
+.comments_form {
+    margin: 20px auto 0 auto;
+}
+.comments_bar {
+    width: 80%;
+    float: left;
+    padding: 4px 0 0 0;
+    height: 70px;
+    background: #3D3D3D;
+}
+.comments_bar img {
+    width: 100px;
+    float: left;
+}
+.comments_bar input, .comments_bar input:focus {
+    background: none;
+    border: none;
+    padding: 31px 0;
+    width: calc(100% - 100px);
+    color: #48fdbc;
+    float: left;
+    font-size: 1.2em;
+    box-shadow: none;
+    margin-top: 2px;
+}
+.comment_submit {
+    width: 18%;
+    margin: 0 0 0 2%;
+    background: #48fdbc;
+    color: #101010;
+    box-shadow: none;
+    border: none;
+    font-size: 1.2em;
+    height: 70px;
+}
+
 /*** Small screens ***/
 @media only screen {  /* Define mobile styles */
     .header.compressed {
@@ -185,7 +275,6 @@
           margin-top: -29px;
           padding-right: 15px;
     }
-
 }
 
 @media only screen and (max-width: 40em) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
@@ -199,6 +288,9 @@
 @media only screen and (min-width: 40.063em) { /* min-width 641px, medium screens */
     .item, .grid-sizer { width: calc(25% - 3px); }
     .item.w2 { width: calc(50% - 3px); }
+    .header a {
+        color: #FFF;
+    }
     .header {
         display: none;
         border-bottom: none;
@@ -273,17 +365,44 @@
         width: calc(100% - 227px);
         float: right;
     }
+    .youTubeVideo { margin-top: 40px; }
+    .youTubeVideo, .presentation_details {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+    .youTubeVideo.menu_out, .presentation_details.menu_out {
+        margin-left: 230px;
+        width: calc(100% - 230px);
+    }
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) { /* min-width 641px and max-width 1023px, use when QAing tablet-only issues */
     .item, .grid-sizer { width: calc(25% - 3px); }
     .item.w2 { width: calc(50% - 3px); }
+    .youTubeVideo { margin-top: 40px; }
+    .youTubeVideo, .presentation_details {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+    .youTubeVideo.menu_out, .presentation_details.menu_out {
+        margin-left: 230px;
+        width: calc(100% - 230px);
+    }
 }
 
 /*** Large screens ***/
 @media only screen and (min-width: 64.063em) { /* min-width 1025px, large screens */
     .item, .grid-sizer { width: calc(25% - 3px); }
     .item.w2 { width: calc(50% - 3px); }
+    .youTubeVideo { margin-top: 40px; }
+    .youTubeVideo, .presentation_details {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+    .youTubeVideo.menu_out, .presentation_details.menu_out {
+        margin-left: 230px;
+        width: calc(100% - 230px);
+    }
 } 
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) { /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */

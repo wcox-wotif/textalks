@@ -22,6 +22,7 @@ class Core {
             $data['presenter'] = $row['presenter'];
             $data['topic'] = $row['topic'];
             $data['date'] = $row['date'];
+            $data['hero_url'] = $row['hero_url'];
             $data['presentation_link'] = $row['presentation_link'];
         }
         return $data;
