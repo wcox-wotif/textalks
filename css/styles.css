@@ -18,7 +18,7 @@
 .header .logo {
     float: left;
     color: #48fdbc;
-    padding-left: 20px;
+    padding-left: 0px;
 }
 .header .menu_icon {
     float: right;
@@ -138,7 +138,7 @@
     width: 100%;
     float: left;
     padding: 15px;
-    opacity: 0.8;
+    opacity: 0.95;
 }
 .item a:hover .details {
     display: block;
@@ -147,12 +147,12 @@
     float: left;
 }
 .item a .details .topic {
-    font-size: 26px;
-    line-height: 26px;
+    font-size: 21px;
+    line-height: 23px;
     font-family: "Helvetica Neue";
 }
 .item a .details .speaker {
-    font-size: 20px;
+    font-size: 18px;
     font-style: light;
 }
 
@@ -210,22 +210,35 @@ body.talks {
     clear: both;
     color: #fff;
     font-weight: normal;
+    font-family: "HelveticaNeue-Ultralight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    letter-spacing: 0.03em;
+}
+.presentation_details h3 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 1em;
+    margin-top: -6px;
+    margin-bottom: 24px;
 }
 .stats img {
-    width: 50px;
+    width: 45px;
+    margin-top: -3px;
 }
 .stats img.heart {
-    width: 30px;
+    width: 25px;
     margin-left: -3px;
     margin-top: -3px;
 }
 .stats {
     float: left;
-    width: 140px;
+    width: 100px;
     color: #48fdbc;
+    font-size: 0.8em;
 }
 .like_stats {
     margin-top: 5px;
+}
+.plays_stats {
+    margin-left: -25px;
 }
 .plays_stats span {
     margin-left: -10px;
@@ -237,23 +250,38 @@ body.talks {
     width: 80%;
     float: left;
     padding: 4px 0 0 0;
-    height: 70px;
+    height: 50px;
     background: #3D3D3D;
 }
 .comments_bar img {
     width: 100px;
     float: left;
+    margin: -13px 0 0 -25px; 
 }
 .comments_bar input, .comments_bar input:focus {
     background: none;
     border: none;
-    padding: 31px 0;
+    padding: 19px 0;
     width: calc(100% - 100px);
-    color: #48fdbc;
+    color: #FFF;
     float: left;
-    font-size: 1.2em;
+    font-size: 1em;
     box-shadow: none;
     margin-top: 2px;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #666;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #666;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #666;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #666;
 }
 .comment_submit {
     width: 18%;
@@ -262,8 +290,8 @@ body.talks {
     color: #101010;
     box-shadow: none;
     border: none;
-    font-size: 1.2em;
-    height: 70px;
+    font-size: 1em;
+    height: 50px;
 }
 
 /*** Small screens ***/
@@ -275,11 +303,17 @@ body.talks {
           margin-top: -29px;
           padding-right: 15px;
     }
+
 }
 
 @media only screen and (max-width: 40em) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
     .header.compressed {
         display: block;
+    }
+    .header.compressed .logo {
+        width: 70px;
+        margin-top: -7px;
+        position: absolute;
     }
 
 }

@@ -1,3 +1,5 @@
+
+
 <div class="row post" >
 
     <div class="youTubeVideo">
@@ -66,11 +68,13 @@
             <form method="POST" class="comments_form">
                 <div class="comments_bar">
                     <img class="" src="/img/comment_logo.svg">
-                    <input type="text" class="comments" placeholder="Please leave positive or constructive feedback">
+                    <input type="text" name="comment" class="comments" placeholder="Please leave positive or constructive feedback">
                 </div>
                 <input type="submit" class="comment_submit" value="Submit" >
             </form>
         </div>
     </div>
+    <div class="next">next</div>
+    <div class="prev">Prev</div>
 
 </div>

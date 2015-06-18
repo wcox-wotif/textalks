@@ -22,8 +22,10 @@
       } catch (Exception $e) {
         print_r($e);    
       }
-      if($imgWidth[0] == 805) {
+      if($imgWidth[0] == 803) {
         $widthClass = 'w2';
+      } else {
+        $widthClass = 'grid-sizer';        
       }
     }
 
