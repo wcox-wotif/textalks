@@ -283,7 +283,7 @@ body.talks {
 :-ms-input-placeholder { /* Internet Explorer 10+ */
    color:    #666;
 }
-.comment_submit {
+.comment_submit, .comment_submit:focus{
     width: 18%;
     margin: 0 0 0 2%;
     background: #48fdbc;
@@ -293,7 +293,26 @@ body.talks {
     font-size: 1em;
     height: 50px;
 }
-
+.comment_submit:hover {
+    background: #3BCA97;
+}
+.submit_message {
+    background: none;
+    color: #2F2F2F;
+    font-size: 1em;
+    height: 50px;
+    margin-top: 5px;
+    text-align: center;
+    padding-top: 11px;
+}
+.submit_message.success {
+    background: #48fdbc;
+    color: #101010;
+}
+.submit_message.fail {
+    background: #CC181E;
+    color: #FFF;
+}
 /*** Small screens ***/
 @media only screen {  /* Define mobile styles */
     .header.compressed {

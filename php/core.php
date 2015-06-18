@@ -10,23 +10,6 @@
 */
 class Core {
     
-    public function returnLastResult() {
-
-        $DB = new DB;
-        $conn = $DB->connect();
-        $data = [];
-        $sql = "SELECT * FROM `talks` ORDER BY `id` DESC LIMIT 1";
-        foreach ($conn->query($sql) as $row) {
-            $data['id'] = $row['id'];
-            $data['youtube_id'] = $row['youtube_id'];
-            $data['presenter'] = $row['presenter'];
-            $data['topic'] = $row['topic'];
-            $data['date'] = $row['date'];
-            $data['hero_url'] = $row['hero_url'];
-            $data['presentation_link'] = $row['presentation_link'];
-        }
-        return $data;
-    }
 
     public function returnAllTalks() {
         $DB = new DB;
@@ -41,24 +24,39 @@ class Core {
             $data[$row['id']]['date'] = $row['date'];
             $data[$row['id']]['hero_url'] = $row['hero_url'];
             $data[$row['id']]['presentation_link'] = $row['presentation_link'];
+            $data[$row['id']]['views'] = $row['views'];
         }
         return $data;
     }
 
-    public function returnLast3Results() {
-        $DB = new DB;
-        $conn = $DB->connect();
-        $data = [];
-        $sql = "SELECT * FROM `talks` ORDER BY `id` DESC LIMIT 3";
-        foreach ($conn->query($sql) as $row) {
-            $data[$row['id']]['id'] = $row['id'];
-            $data[$row['id']]['youtube_id'] = $row['youtube_id'];
-            $data[$row['id']]['presenter'] = $row['presenter'];
-            $data[$row['id']]['topic'] = $row['topic'];
-            $data[$row['id']]['date'] = $row['date'];
-            $data[$row['id']]['presentation_link'] = $row['presentation_link'];
+    public function addViewToVideo($talkId) {
+
+        try {
+            $DB = new DB;
+            $conn = $DB->connect();
+
+            $sql = "SELECT * FROM `talks` WHERE `id` = '$talkId' LIMIT 1";
+            foreach ($conn->query($sql) as $row) {
+                $rowId = $row['id'];
+                $currentCount = $row['views'];
+            }
+
+            $newCount = intval($currentCount) + 1;
+
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $done = $conn->prepare("UPDATE `talks` SET `views` = ? WHERE `id` = '$rowId'");
+            $done->bindParam(1, $newCount);
+            $done->execute();
+        } catch(Exception $e) {
+            return 'ERROR: '.$e->getMessage();
         }
-        return $data;
+        if($done) {
+            return 'success';
+        } else {
+            return "fail";
+        }        
+
+
     }
 
     public function uploadImage($data){
@@ -104,7 +102,6 @@ class Core {
             // return '<h4>'.$e->getMessage().'</h4>';
         }
     }
-
 
     public function getYouTubeData($youtubeIdArray) {
          

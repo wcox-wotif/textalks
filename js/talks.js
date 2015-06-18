@@ -7,55 +7,69 @@
 
     init: function(){
 
+        this.submitTalk();
+        this.submitLike();
 
     },
 
-    addYouTubeVideo: function() {
-      var pageInfo = $.parseJSON($('.page_info_json').html());
-
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '400',
-          width: '800',
-          videoId: pageInfo.talk.youtube_id,
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
+    addComment: function(talk_id, comment) {
+        $.post("/php/addVideoComment.php", { talk_id: talk_id, comment: comment })
+        .done(function( data ) {
+            if(data == 'success'){
+                _this.submitMessage("Thanks for your feedback. When's your next talk?", 'success');
+            } else {
+                _this.submitMessage('Snap! Something went wrong. Quick, walk away before someone sees what you did...', 'fail');
+            }
         });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-      console.log(pageInfo);
-
     },
+
+    submitTalk: function() {
+      _this = this;       
+        $('.comment_submit').click(function() {
+            var talk_id = $('.comments_form input[name="talk_id"]').val();
+            var comment = $('.comments_form input[name="comment"]').val();
+            if(comment != "") {
+                _this.addComment(talk_id, comment);
+            } else {
+                _this.submitMessage('Snap! Something went wrong. Quick, walk away before someone sees what you did...', 'fail');
+            }
+        });
+    },
+
+    submitMessage: function(message, successOrFail) {
+        var $submit_message = $('.submit_message');
+
+        $submit_message.addClass(successOrFail).html(message);
+        setTimeout(function() { 
+            $submit_message.removeClass('fail success').html('');
+        }, 5000);
+    },
+
+    addLikes: function(talk_id) {
+        $.post("/php/addVideoLikes.php", { talk_id: talk_id})
+        .done(function( data ) {
+            if(data == 'success'){
+                _this.submitMessage("Thanks. We like you too ;)", 'success');
+            } else {
+                _this.submitMessage('Snap! Something went wrong. Quick, walk away before someone sees what you did...', 'fail');
+            }
+        });
+    },
+
+    submitLike: function() {
+      _this = this;       
+        $('.like_stats .heart').click(function() {
+            var pageInfo = $.parseJSON($('.page_info_json').html());
+            console.log(pageInfo);
+            var talk_id = pageInfo.talk.id;
+            if(talk_id != "") {
+                _this.addLikes(talk_id);
+            } else {
+                _this.submitMessage('Snap! Something went wrong. Also your boss is standing behind you...', 'fail');
+            }
+        });
+    }
+
 
 
 }

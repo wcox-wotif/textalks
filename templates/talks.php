@@ -61,18 +61,31 @@
             <div class="presenter"><h3><?php print $pageInfo['talk']['presenter']; ?><h3></div>
         </div>
         <div class="large-12 columns">
-            <div class="stats like_stats"><img class="heart" src="/img/heart_icon.svg"> <span class="likes">23</span> Likes</div>
-            <div class="stats plays_stats"><img class="small_play_logo" src="/img/play_solid_logo.svg"> <span class="plays">23</span> Plays</div>
+            <div class="stats like_stats"><img class="heart" src="/img/heart_icon.svg"> 
+                <span class="likes"><?php print $pageInfo['likes']['like_count']; ?></span> Likes
+            </div>
+            <div class="stats plays_stats">
+                <img class="small_play_logo" src="/img/play_solid_logo.svg"> 
+                <span class="plays"><?php print $pageInfo['talk']['views']; ?></span> Plays
+            </div>
         </div>
         <div class="large-12 columns">
             <form method="POST" class="comments_form">
                 <div class="comments_bar">
-                    <img class="" src="/img/comment_logo.svg">
+                    <img class="" src="/img/comment_logo.svg">                    
+                    <input type="hidden" name="talk_id" value="<?php print $pageInfo['talk']['id']; ?>">
                     <input type="text" name="comment" class="comments" placeholder="Please leave positive or constructive feedback">
                 </div>
-                <input type="submit" class="comment_submit" value="Submit" >
+                <a href="#" class="button comment_submit">Submit</a>
+                <!-- <input type="submit" class="comment_submit" value="Submit" > -->
             </form>
         </div>
+        <div class="large-12 columns">
+            <div class="submit_message"> submit message here</div>
+        </div>
+
+        <?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/talksPageComments.php'; ?>
+
     </div>
     <div class="next">next</div>
     <div class="prev">Prev</div>

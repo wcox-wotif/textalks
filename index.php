@@ -3,7 +3,7 @@
     ini_set('display_errors', 'On');
 
     include_once $_SERVER['DOCUMENT_ROOT'].'/php/Page.php';
-    require_once $_SERVER['DOCUMENT_ROOT'].'/apiScripts/google-api-php-client/src/Google/autoload.php'; // or wherever autoload.php is located
+    include_once $_SERVER['DOCUMENT_ROOT'].'/php/core.php';
 
     $Page = new Page;
     $pageInfo = $Page->returnPageInfo();
@@ -23,6 +23,8 @@
     if($pageInfo['page_name'] == 'home') {
         include_once $_SERVER['DOCUMENT_ROOT'].'/templates/homePage_videoLinks.php';
     } elseif ($pageInfo['page_name'] == 'talks') {
+        $Core = new Core;
+        $Core->addViewToVideo($pageInfo['talk']['id']);
         include_once $_SERVER['DOCUMENT_ROOT'].'/php/addVideoComment.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/templates/talks.php';
     }
