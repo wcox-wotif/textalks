@@ -67,7 +67,7 @@ class Core {
                 $maxsize = 2000000;
                 if($data['size'] < $maxsize ) {
                     $size = getimagesize($data['tmp_name']);
-                    $upload_dir = $_SERVER['DOCUMENT_ROOT'] . "/img/heros/";
+                    $upload_dir = $_SERVER['DOCUMENT_ROOT'] . "/heros/";
                     $timeStamp = time();
                     $maxsize = 2000000;
                     $photo = $data['tmp_name'];
@@ -93,7 +93,7 @@ class Core {
                     } else {
                         return "File type not supported";
                     }
-                    return "/img/heros/" . $name;
+                    return "/heros/" . $name;
                 } else {
                     throw new Exception("File Size Error");
                 }

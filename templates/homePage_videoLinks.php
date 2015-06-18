@@ -14,8 +14,21 @@
     $topic = $value['topic'];
     $topicUrl =  str_replace(" ", "_", $topic);
     $heroImg = $value['hero_url'];
+    $imgWidth = '';
+    $widthClass = '';
+    if($heroImg != '') {    
+      try {
+        $imgWidth = getimagesize($_SERVER['DOCUMENT_ROOT'].$heroImg);
+      } catch (Exception $e) {
+        print_r($e);    
+      }
+      if($imgWidth[0] == 805) {
+        $widthClass = 'w2';
+      }
+    }
+
 ?>
-  <div data-title="<?php print $topic; ?>" data-speaker="<?php print $presenter; ?>" class="item w2">
+  <div data-title="<?php print $topic; ?>" data-speaker="<?php print $presenter; ?>" class="item <?php print $widthClass; ?>">
       <a href="/talks/<?php print $presenterUrl; ?>-<?php print $topicUrl; ?>" title="<?php print $presenter; ?>. <?php print $topic; ?>">
           <img src="<?php print $heroImg; ?>" alt="<?php print $topic; ?>">
           <div class="details">

@@ -296,7 +296,7 @@ body.talks {
         border-bottom: none;
         color: #FFF;
         padding: 0px;
-        position: absolute;
+        position: fixed;
         height: 100%;
         border-right: 3px solid #FFF;
         z-index: 200;
