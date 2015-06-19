@@ -129,6 +129,12 @@
     width: 100%;
     float: left;
 }
+.item {
+    opacity: 0;
+}
+.item.loaded {
+    opacity: 1;
+}
 .item, .grid-sizer { width: calc(50% - 3px); }
 .item.w2 { width: calc(100% - 3px); }
 .item a {

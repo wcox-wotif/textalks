@@ -15,6 +15,7 @@
     startLayout: function() {
 
         var $container = $('.video_container');
+        var displayImages = $('.video_container .item').addClass('loaded');
         // init
         $container.packery({
             itemSelector: '.item',
