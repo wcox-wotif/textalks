@@ -7,7 +7,6 @@
 
     init: function(){
 
-        this.startLayout();
         this.addMobileText();
 
     },
@@ -16,6 +15,7 @@
 
         var $container = $('.video_container');
         var displayImages = $('.video_container .item').addClass('loaded');
+        var displayImages = $('.video_container').addClass('loadedComplete');
         // init
         $container.packery({
             itemSelector: '.item',
