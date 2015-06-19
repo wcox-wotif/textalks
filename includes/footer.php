@@ -14,9 +14,11 @@
 $(function() {
     MENU.init();
     COLLAGE.init();
-    COLLAGE.startLayout();
     TALKS.init();
     $(document).foundation();
+});
+$(window).load(function() {
+    COLLAGE.startLayout();
 });
 </script>
 

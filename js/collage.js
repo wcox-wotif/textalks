@@ -37,7 +37,8 @@
     addMobileText: function() {
     
         if(this.mobileCheck()){
-            $('.video_container .item').each(function(i, element) {
+            $('.video_container .item a').each(function(i, element) {
+
                 var title = $(this).data("title");
                 var titleHtml = '<span class="title">'+title+'</span>'
                 var speaker = $(this).data('speaker');

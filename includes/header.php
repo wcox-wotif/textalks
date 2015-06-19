@@ -1,9 +1,7 @@
 <header id="header">
 
     <div class="header compressed">
-        <a href="/">
-            <div class="logo"><img src="/img/play_solid_logo.svg"></div>
-        </a>
+        <div class="logo"><img src="/img/play_solid_logo.svg"></div>
         <div class="menu_icon"><i class="fa fa-bars"></i></div>
     </div>
 
@@ -23,18 +21,18 @@
         </div>
 
         <menu type="context toolbar">
-            <li><a href="/about" title="About TEX">About TEX</a></li>
-            <li><a href="/resources" title="Resources">Resources</a></li>
-            <li><a href="/contact" title="Book my talk">Book my talk</a></li>
+            <li><a href="/" title="TEX's home.">Home</a></li>
+            <!-- <li><a href="/resources" title="Resources">Resources</a></li> -->
+            <!-- <li><a href="/contact" title="Book my talk">Book my talk</a></li> -->
         </menu>
 
-        <div class="sorting">
+<!--         <div class="sorting">
             <li class="" data-location="sydney">SYDNEY</li>
             <li class="" data-location="seattle">SEATTLE</li>
             <li class="active" data-location="brisbane">BRISBANE</li>
             <li class="" data-location="london">LONDON</li>
         </div>
-        <div class="clearfix"></div>
+ -->
     </div>
 
 

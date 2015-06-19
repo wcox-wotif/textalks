@@ -66,7 +66,7 @@
             </div>
             <div class="stats plays_stats">
                 <img class="small_play_logo" src="/img/play_solid_logo.svg"> 
-                <span class="plays"><?php print $pageInfo['talk']['views']; ?></span> Plays
+                <span class="plays"><?php print $pageInfo['youtube_info']['views']; ?></span> Plays
             </div>
         </div>
         <div class="large-12 columns">
@@ -83,11 +83,13 @@
         <div class="large-12 columns">
             <div class="submit_message"> submit message here</div>
         </div>
+        <div class="nextPrevTalks">
+            <a href="#prev"><img class="prev" src="/img/arrow.svg"></a>
+            <a href="#next"><img class="next" src="/img/arrow.svg"></a>
+        </div>
 
         <?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/talksPageComments.php'; ?>
 
     </div>
-    <div class="next">next</div>
-    <div class="prev">Prev</div>
 
 </div>

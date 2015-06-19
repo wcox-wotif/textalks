@@ -19,6 +19,9 @@
     float: left;
     color: #48fdbc;
     padding-left: 0px;
+    position: fixed;
+    top: 0;
+    width: 190px;
 }
 .header .menu_icon {
     float: right;
@@ -29,6 +32,9 @@
     clear: left;
     font-size: 0.4em;
     padding-left: 15px;
+}
+.header.uncompressed {
+    height: 130px;
 }
 .header.uncompressed menu {
     float: right;
@@ -167,15 +173,14 @@
 }
 .video_container .item span.title {
     margin: 0 0 20px 20px;
-
+    font-size: 0.8em;
 }
 .video_container .item span.speaker {
     margin: 0 0 0 20px;
-
+    font-size: 0.7em;
 }
 .video_container .item img {
 }
-
 
 body.talks {
     background: #1B1B1B;
@@ -292,6 +297,8 @@ body.talks {
     border: none;
     font-size: 1em;
     height: 50px;
+    text-align: center;
+    padding: 1em;
 }
 .comment_submit:hover {
     background: #3BCA97;
@@ -313,14 +320,31 @@ body.talks {
     background: #CC181E;
     color: #FFF;
 }
+.nextPrevTalks {
+    position: absolute;
+    top: 670px;
+    width: calc(100% - 80px);
+}
+img.next, img.prev {
+    position: relative;
+    width: 40px;
+    margin-left: 80px;
+    float: right;
+}
+img.prev {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    float: left;
+}
+
 /*** Small screens ***/
 @media only screen {  /* Define mobile styles */
     .header.compressed {
         display: block;
     }
     .header.uncompressed menu {
-          margin-top: -29px;
-          padding-right: 15px;
+        margin-top: -29px;
+        padding-right: 15px;
     }
 
 }
@@ -362,7 +386,8 @@ body.talks {
         display: block;
         clear: both;
         width: 90px;
-        margin: 80px 0 0 -8px;
+        margin: 50px 0 0 -8px;
+        height: 80px;
     }
     .tagline {
         font-size: 0.3em;
@@ -377,9 +402,14 @@ body.talks {
         display: block;
         clear: both;
         width: 32px;
-        margin: 80px auto 0 auto;
+        margin-left: 24px;
         font-size: 30px;
-
+        position: fixed;
+        top: 160px;
+    }
+    .header.uncompressed {
+        height: 100%;
+        width: 230px;
     }
     .header.uncompressed .menu_close {
         margin: 0 0 0 170px;
@@ -392,9 +422,6 @@ body.talks {
     .header.uncompressed .menu_close:hover {
         color: #48fdbc;
     }
-    .header.uncompressed {
-        width: 230px;
-    }
     .header.uncompressed .logo {
         width: 160px;
     }
@@ -404,7 +431,9 @@ body.talks {
         clear: both;
         list-style: none;
         font-size: 12px;
-        margin: 100px 0 0 25px;
+        margin: 0 0 0 25px;
+        position: fixed;
+        top: 180px;
     }
     .header.uncompressed menu li {
         padding: 5px;

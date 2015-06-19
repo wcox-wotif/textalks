@@ -13,7 +13,7 @@
 <html class="no-js" lang="en">
 <head>
     <?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/head.php'; ?>
-    <title>TEX Talks - Expedia learning</title>
+    <title><?php print $pageInfo['page_title'] ?></title>
 </head>
 <body class="<?php print $pageInfo['page_name']; ?>">
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php'; ?>
@@ -23,8 +23,6 @@
     if($pageInfo['page_name'] == 'home') {
         include_once $_SERVER['DOCUMENT_ROOT'].'/templates/homePage_videoLinks.php';
     } elseif ($pageInfo['page_name'] == 'talks') {
-        $Core = new Core;
-        $Core->addViewToVideo($pageInfo['talk']['id']);
         include_once $_SERVER['DOCUMENT_ROOT'].'/php/addVideoComment.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/templates/talks.php';
     }

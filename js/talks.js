@@ -38,7 +38,6 @@
 
     submitMessage: function(message, successOrFail) {
         var $submit_message = $('.submit_message');
-
         $submit_message.addClass(successOrFail).html(message);
         setTimeout(function() { 
             $submit_message.removeClass('fail success').html('');
@@ -60,7 +59,6 @@
       _this = this;       
         $('.like_stats .heart').click(function() {
             var pageInfo = $.parseJSON($('.page_info_json').html());
-            console.log(pageInfo);
             var talk_id = pageInfo.talk.id;
             if(talk_id != "") {
                 _this.addLikes(talk_id);

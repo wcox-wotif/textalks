@@ -14,7 +14,7 @@
     },
 
     showMenu: function() {
-        $('.header.compressed .menu_icon').click(function() {
+        $('.header.compressed .menu_icon, .header.compressed .logo').click(function() {
             $('.header.compressed').hide();
             $('.header.uncompressed').show();
             $('.video_container').addClass("menu_out");
