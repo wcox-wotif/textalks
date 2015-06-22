@@ -1,5 +1,3 @@
-// Standard.js
-// Contains all the standard functions for syncing data and changing the data.
 
 ;COLLAGE = {
 
@@ -16,7 +14,6 @@
         var $container = $('.video_container');
         var displayImages = $('.video_container .item').addClass('loaded');
         var displayImages = $('.video_container').addClass('loadedComplete');
-        // init
         $container.packery({
             itemSelector: '.item',
             gutter: 3,
