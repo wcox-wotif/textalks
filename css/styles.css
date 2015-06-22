@@ -173,15 +173,17 @@
     clear: both;
     display: block;
     bottom: 0;
-    text-shadow: 1px 1px 1px #101010;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 2px 2px 3px 10px;
 }
 .video_container .item span.title {
-    margin: 0 0 20px 20px;
+    margin: 0 0 20px 0;
     font-size: 0.8em;
 }
 .video_container .item span.speaker {
-    margin: 0 0 0 20px;
-    font-size: 0.7em;
+    margin: 0 0 0 0;
+    font-size: 0.6em;
 }
 .video_container .item img {
 }
