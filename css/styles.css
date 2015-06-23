@@ -343,6 +343,21 @@ img.prev {
     float: left;
 }
 
+.page_comments {
+    background: #2F2F2F;
+    padding: 0 3% 0 3%;
+    color: #fff;
+}
+.page_comments .columns.comment {
+    margin-top: 10px;
+    padding: 20px 10px; 
+}
+.page_comments .border_bottom {
+    height: 1px;
+    width: 100%;
+    background: #48fdbc;
+    opacity: 0.2;
+}
 /*** Small screens ***/
 @media only screen {  /* Define mobile styles */
     .header.uncompressed menu {
@@ -381,6 +396,10 @@ img.prev {
     }
     .youTubeVideo {
         margin-top: 68px;        
+    }
+    .presentation_details .columns {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

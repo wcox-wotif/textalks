@@ -88,8 +88,8 @@
             <a href="#next"><img class="next" src="/img/arrow.svg"></a>
         </div>
 
-        <?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/talksPageComments.php'; ?>
 
     </div>
 
 </div>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/templates/talksPageComments.php'; ?>
