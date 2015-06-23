@@ -516,11 +516,11 @@ img.prev {
     .item, .grid-sizer { width: calc(25% - 3px); }
     .item.w2 { width: calc(50% - 3px); }
     .youTubeVideo { margin-top: 40px; }
-    .youTubeVideo, .presentation_details {
+    .youTubeVideo, .presentation_details, .page_comments {
         margin-left: 80px;
         width: calc(100% - 80px);
     }
-    .youTubeVideo.menu_out, .presentation_details.menu_out {
+    .youTubeVideo.menu_out, .presentation_details.menu_out, .page_comments.menu_out {
         margin-left: 230px;
         width: calc(100% - 230px);
     }

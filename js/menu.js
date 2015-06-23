@@ -18,6 +18,7 @@
             $('.header.uncompressed').show();
             $('.video_container').addClass("menu_out");
             $('.youTubeVideo').addClass("menu_out");
+            $('.page_comments').addClass("menu_out");
             $('.presentation_details').addClass("menu_out");
             COLLAGE.startLayout();
         });
@@ -29,6 +30,7 @@
             $('.header.compressed').show();
             $('.video_container').removeClass("menu_out");
             $('.youTubeVideo').removeClass("menu_out");
+            $('.page_comments').removeClass("menu_out");
             $('.presentation_details').removeClass("menu_out");
             COLLAGE.startLayout();
         });
