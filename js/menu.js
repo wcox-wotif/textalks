@@ -10,7 +10,6 @@
         this.showMenu();
         this.hideMenu();
 
-
     },
 
     showMenu: function() {

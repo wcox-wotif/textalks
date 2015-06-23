@@ -5,7 +5,7 @@
 
     init: function(){
 
-        this.addMobileText();
+        // this.addMobileText();
 
     },
 

@@ -1,5 +1,9 @@
 <header id="header">
 
+    <div class="header mobile">
+        <a href="/"><img src="/img/tex_full_logo.svg"></a>
+    </div>
+
     <div class="header compressed">
         <div class="logo"><img src="/img/play_solid_logo.svg"></div>
         <div class="menu_icon"><i class="fa fa-bars"></i></div>

@@ -345,38 +345,57 @@ img.prev {
 
 /*** Small screens ***/
 @media only screen {  /* Define mobile styles */
-    .header.compressed {
-        display: block;
-    }
     .header.uncompressed menu {
         margin-top: -29px;
         padding-right: 15px;
     }
-
 }
 
 @media only screen and (max-width: 40em) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
-    .header.compressed {
-        display: block;
+    .header {
+        display: none;
     }
-    .header.compressed .logo {
-        width: 70px;
+    .header.mobile {
+        display: block;
+        position: fixed;
+        height: 66px;
+        width: 100%;
+        z-index: 101;
+    }
+    .header.mobile a img { 
+        width: 114px;
+        padding: 0 0 0 0px;
         margin-top: -7px;
-        position: absolute;
+        margin-left: 10px;
     }
     .comment_submit, .comment_submit:focus {
         font-size: 0.8em;
         padding: 1.3em 0.8em;
     }
-
+    .menu_icon {
+        display: none;
+    }
+    .video_container {
+        margin-top: 66px;
+        margin-left: 0;
+    }
+    .youTubeVideo {
+        margin-top: 68px;        
+    }
 }
 
 /*** Medium screens ***/
 @media only screen and (min-width: 40.063em) { /* min-width 641px, medium screens */
     .item, .grid-sizer { width: calc(25% - 3px); }
     .item.w2 { width: calc(50% - 3px); }
+    .header.mobile {
+        display: none;
+    }
     .header a {
         color: #FFF;
+    }
+    .header.compressed {
+        display: block;
     }
     .header {
         display: none;
