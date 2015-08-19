@@ -25,6 +25,16 @@ class Page {
             $pageInfo['meta_description'] = "TEX Talks are a win-win for the speaker and the audience. As a presenter, you gain confidence from practicing in front of real people who provide you with constructive feedback (bet your cat Mittens doesn’t do that). By sitting in on the weekly talks, your colleagues benefit from your knowledge and experience, especially when you choose a topic you’re passionate about.";
             $pageInfo['talks'] = $this->returnAllTalksInfo();
         
+        } elseif ($page_name[1] == 'brisbane') {
+            $pageInfo = $this->genericMetaData('brisbane');
+        } elseif ($page_name[1] == 'montreal') {
+            $pageInfo = $this->genericMetaData('montreal');
+        } elseif ($page_name[1] == 'bellevue') {
+            $pageInfo = $this->genericMetaData('bellevue');
+        } elseif ($page_name[1] == 'london') {
+            $pageInfo = $this->genericMetaData('london');
+        } elseif ($page_name[1] == 'sydney') {
+            $pageInfo = $this->genericMetaData('sydney');
         } elseif ($page_name[1] == 'talks') {
         
             $talksInfo = explode('-', $page_name[2]);
@@ -41,8 +51,21 @@ class Page {
             $youtubeInfo = $this->getYouTubeData($talkInfo['talk']['youtube_id']);
             $pageInfo = array_merge($pageInfo,$talkInfo,$commentInfo,$likeInfo,$nextPrevTalks,$youtubeInfo);
         
+        } else {
+            $pageInfo['page_name'] = '404';
+            $pageInfo['page_title'] = 'How did you even get here??';
+            $pageInfo['meta_description'] = "TEX Talks are a win-win for the speaker and the audience. As a presenter, you gain confidence from practicing in front of real people who provide you with constructive feedback (bet your cat Mittens doesn’t do that). By sitting in on the weekly talks, your colleagues benefit from your knowledge and experience, especially when you choose a topic you’re passionate about.";
+            $pageInfo['talks'] = '';
         }
         return $pageInfo;
+    }
+
+    private function genericMetaData($location) {
+            $pageInfo['page_name'] = strtolower($location);
+            $pageInfo['page_title'] = 'tex '.ucfirst($location).': Plan, Present, Improve';
+            $pageInfo['meta_description'] = "Welcome to ".ucfirst($location)." tex. A win-win for the speaker and the audience. As a presenter, you gain confidence from practicing in front of real people who provide you with constructive feedback (bet your cat Mittens doesn’t do that). By sitting in on the weekly talks, your colleagues benefit from your knowledge and experience, especially when you choose a topic you’re passionate about.";
+            $pageInfo['talks'] = $this->returnLocationTalksInfo(strtolower($location));
+            return $pageInfo;
     }
 
     private function returnTalkInfo($presenter, $topic) {
@@ -156,7 +179,28 @@ class Page {
             $pageInfo[$row['id']]['hero_url'] = $row['hero_url'];
             $pageInfo[$row['id']]['presentation_link'] = $row['presentation_link'];
             $pageInfo[$row['id']]['views'] = $row['views'];
+            $pageInfo[$row['id']]['location'] = $row['location'];
+            $pageInfo[$row['id']]['url'] = $Core->buildTalkUrl($row['presenter'], $row['topic']);
+        }
+        return $pageInfo;
+    }
+
+    private function returnLocationTalksInfo($location) {
+        $Core = new Core;
+        $DB = new DB;
+        $conn = $DB->connect();
+        $pageInfo = [];
+        $sql = "SELECT * FROM `talks` WHERE `location` = '$location' ORDER BY `id` DESC";
+        foreach ($conn->query($sql) as $row) {
+            $pageInfo[$row['id']]['id'] = $row['id'];
+            $pageInfo[$row['id']]['youtube_id'] = $row['youtube_id'];
+            $pageInfo[$row['id']]['presenter'] = $row['presenter'];
+            $pageInfo[$row['id']]['topic'] = $row['topic'];
+            $pageInfo[$row['id']]['date'] = $row['date'];
+            $pageInfo[$row['id']]['hero_url'] = $row['hero_url'];
+            $pageInfo[$row['id']]['presentation_link'] = $row['presentation_link'];
             $pageInfo[$row['id']]['views'] = $row['views'];
+            $pageInfo[$row['id']]['location'] = $row['location'];
             $pageInfo[$row['id']]['url'] = $Core->buildTalkUrl($row['presenter'], $row['topic']);
         }
         return $pageInfo;
@@ -174,6 +218,20 @@ class Page {
         $pageInfo['youtube_info']['views'] = $result['items'][0]['statistics']['viewCount'];
         
         return $pageInfo;
+    }
+
+    public function doesLocationHaveVideos($location) {
+        $DB = new DB;
+        $conn = $DB->connect();
+        $rowCount = "SELECT COUNT(*) FROM `talks` WHERE `location` = '$location'";
+        $result = $conn->prepare($rowCount);
+        $rowExists = $result->execute();
+        $rowExists = $result->fetchColumn();
+        if($rowExists){
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

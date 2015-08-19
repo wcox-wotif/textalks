@@ -20,7 +20,7 @@ class Core {
         try {
             if(is_uploaded_file($data['tmp_name']) && getimagesize($data['tmp_name']) != false) {
                 $maxsize = 2000000;
-                if($data['size'] < $maxsize ) {
+                if ($data['size'] < $maxsize ) {
                     $size = getimagesize($data['tmp_name']);
                     $upload_dir = $_SERVER['DOCUMENT_ROOT'] . "/heros/";
                     $timeStamp = time();

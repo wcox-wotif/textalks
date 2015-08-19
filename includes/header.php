@@ -26,17 +26,27 @@
 
         <menu type="context toolbar">
             <li><a href="/" title="TEX's home.">Home</a></li>
-            <!-- <li><a href="/resources" title="Resources">Resources</a></li> -->
-            <!-- <li><a href="/contact" title="Book my talk">Book my talk</a></li> -->
+
+<?php
+
+    include_once $_SERVER['DOCUMENT_ROOT'].'/php/Page.php';
+    function returnLink($location) {
+        $Page = new Page;
+        if($Page->doesLocationHaveVideos($location)) {
+            return '<li><a href="/'.strtolower($location).'" title="'.ucfirst($location).'">'.ucfirst($location).'</a></li>';
+        } else {
+            return '<li><span class="disabledLink">'.ucfirst($location).'</span></li>';
+        }
+    }
+ 
+    print returnLink('brisbane');
+    print returnLink('bellevue');
+    print returnLink('montreal');
+    print returnLink('london');
+    print returnLink('sydney');
+ ?>
         </menu>
 
-<!--         <div class="sorting">
-            <li class="" data-location="sydney">SYDNEY</li>
-            <li class="" data-location="seattle">SEATTLE</li>
-            <li class="active" data-location="brisbane">BRISBANE</li>
-            <li class="" data-location="london">LONDON</li>
-        </div>
- -->
     </div>
 
 

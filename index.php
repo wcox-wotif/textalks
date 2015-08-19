@@ -32,9 +32,13 @@
 
     if($pageInfo['page_name'] == 'home') {
         include_once $_SERVER['DOCUMENT_ROOT'].'/templates/homePage_videoLinks.php';
+    } elseif ($pageInfo['page_name'] == '404') {
+        include_once $_SERVER['DOCUMENT_ROOT'].'/templates/404.php';
     } elseif ($pageInfo['page_name'] == 'talks') {
         include_once $_SERVER['DOCUMENT_ROOT'].'/php/addVideoComment.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/templates/talks.php';
+    } else {
+        include_once $_SERVER['DOCUMENT_ROOT'].'/templates/homePage_videoLinks.php';
     }
 
  ?>
