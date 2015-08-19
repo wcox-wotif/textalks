@@ -25,6 +25,13 @@ class Page {
             $pageInfo['meta_description'] = "TEX Talks are a win-win for the speaker and the audience. As a presenter, you gain confidence from practicing in front of real people who provide you with constructive feedback (bet your cat Mittens doesn’t do that). By sitting in on the weekly talks, your colleagues benefit from your knowledge and experience, especially when you choose a topic you’re passionate about.";
             $pageInfo['talks'] = $this->returnAllTalksInfo();
         
+        } elseif ($page_name[1] == 'about'){
+        
+            $pageInfo['page_name'] = 'about';
+            $pageInfo['page_title'] = 'tex: Plan, Present, Improve';
+            $pageInfo['meta_description'] = "TEX are all about improving your presentation skills in a supportive, informal environment.";
+            $pageInfo['talks'] = '';
+        
         } elseif ($page_name[1] == 'brisbane') {
             $pageInfo = $this->genericMetaData('brisbane');
         } elseif ($page_name[1] == 'montreal') {

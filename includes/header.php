@@ -25,6 +25,7 @@
         </div>
 
         <menu type="context toolbar">
+            <li><a href="/about" title="TEX's home.">About</a></li>
             <li><a href="/" title="TEX's home.">Home</a></li>
 
 <?php
